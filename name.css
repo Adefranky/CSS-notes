@@ -1,0 +1,276 @@
+h3 {
+    color: brown;
+    text-shadow: 2px 3px 5px blue;
+}
+
+/* flexbox proggy */
+* {
+    margin: 0;
+}
+
+/* .container {
+    background-color: rgb(34, 34, 34);
+    padding: 20px;
+    height: 100vh;
+    /* Grid stuffs */
+/* display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(3, 2fr);
+    grid-gap: 10px; */
+
+/* }  */
+
+header {
+    grid-column: 1/4;
+    /*shortform*/
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+/* aside {
+    grid-column-start: 2;
+    grid-column-end: 3;
+} */
+
+.s {
+    padding: 20px;
+    background-color: rgb(84, 84, 84);
+    text-align: center;
+    color: #fff;
+
+}
+
+/* GridGarden game */
+/* culc() function */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.s {
+    background: crimson;
+    width: calc(100px + 100px);
+    height: calc(100px - 50px);
+    margin: calc(10px*2);
+    border-radius: 15px calc(15px/10)4px 2px;
+    padding: calc(200px/10);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: red;
+}
+
+.container.img {
+    background-image: url("https://media.istockphoto.com/id/1439425791/photo/digital-technology-software-development-concept-coding-programmer-working-on-laptop-with.jpg?s=612x612&w=0&k=20&c=43WZfDZcnI2lULx83NVAtFiGyzKHzi4HyLqYZgggX-c="),
+        url(https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1), linear-gradient(steelblue, firebrick);
+    background-position: bottom;
+    background-size: cover;
+    height: 100vh;
+    mix-blend-mode: multiply;
+    mix-blend-mode: darken;
+    mix-blend-mode: darken;
+    mix-blend-mode: color-dodge;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
+    mix-blend-mode: hue;
+    mix-blend-mode: saturation;
+    mix-blend-mode: color;
+    mix-blend-mode: luminosity;
+    mix-blend-mode: overlay;
+
+}
+
+/* is() */
+header:is(h1,
+    h2,
+    h3) {
+    color: red
+}
+
+:is(section, article, aside, nav):is(h1, h2, h3, h4, h5, h6) {
+    color: blue;
+}
+
+/* before and after */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+p::before {
+    content: "hello";
+    background-color: red;
+    color: aqua;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
+p::after {
+    content: "bye";
+    background: red;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 800;
+}
+
+/* :not() */
+
+body {
+    background: blue;
+    color: #fff;
+    padding: 2rem;
+}
+
+.section {
+    width: 42em;
+    margin: auto;
+    background: black;
+    padding: 4rem;
+}
+
+sectionA .article-title:not(content) {
+    color: blue;
+    font-size: 14px;
+
+}
+
+/* variables */
+:root {
+    --primary-color: teal;
+    --font-size: 4rem;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: var(--font-size);
+}
+
+/* DRY CSS - Do Not Repeat Yourself */
+/* Transformation Transitions Animations */
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container>div {
+    width: 300px;
+    height: 300px;
+    background-color: cyan;
+    transform: translateY(200px);
+    transform: translateX(200px);
+    /* or */
+    transform: translate(100px, 200px);
+    transform: rotate(20deg);
+    transform: scale(4, 2);
+    transform: skew(50deg);
+}
+
+/* transition */
+.container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>div {
+    text-decoration: none;
+    border: 2px solid red;
+    padding-inline-end: 10px 20px;
+    color: brown;
+
+    /* transition */
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(2, 3, 4, 5);
+
+}
+
+.container>a:hover {
+    background-color: brown;
+    color: white;
+
+}
+
+/* Animations */
+
+.container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>div {
+    width: 300px;
+    height: 300px;
+    background: darkblue;
+    /* Animations */
+    animation-name: InAndOut;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-timing-function: cubic-bezier(0.76, 1.2, 1.4, 2);
+}
+
+@keyframes InAndOut {
+    0% {
+        transform: scale(2);
+
+    }
+
+    25% {
+        transform: scale(0.2);
+        background-color: #fff;
+        transform: skew(10deg);
+
+    }
+
+    50% {
+        background-color: blue;
+        transform: skew(40deg);
+        border-radius: 20px;
+    }
+}
+
+/* Media queries */
+
+body {
+    background-color: orange;
+}
+
+@media screen and (max-width:100px) {
+    body {
+        background-color: aqua;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        background: maroon;
+        font-size: 5rem;
+    }
+}
